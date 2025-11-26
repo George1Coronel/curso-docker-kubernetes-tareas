@@ -7,6 +7,7 @@
 ## Índice de Clases
 
 1. [Clase 1 - Introducción a Containers y Docker](clase1/)
+2. [Proyecto Final - Despliegue de Containers y Kubernetes](ProyectoFinal/)
 
 
 Este repositorio contiene las tareas realizadas durante el curso de Docker y Kubernetes dictado por i-Quattro
