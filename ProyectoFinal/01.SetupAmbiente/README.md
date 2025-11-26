@@ -71,7 +71,7 @@
 
 
 
-
+<!-- 
 
 
 
@@ -104,4 +104,4 @@
 5. Conclusiones
     - *Qué se aprendio*, para esta primera clase se logro aprender acerca de los comandos basico para crear (correr), verificar y eliminar contenedores. Ademas de logramos usar diferentes tags que nos permiten personalizar el "funcionamiento" de nuestros contenedores.
 
-    - *Dificultades*, la dificultad que puedo mesionar es el uso de comandos, al ser una persona que viene del entorno windows. 
+    - *Dificultades*, la dificultad que puedo mesionar es el uso de comandos, al ser una persona que viene del entorno windows.  -->
