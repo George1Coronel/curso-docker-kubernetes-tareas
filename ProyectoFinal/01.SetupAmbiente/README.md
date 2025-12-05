@@ -4,104 +4,144 @@
 
 1. Caracteristicas de la maquina u ordenador:
 
-![Informacion de la maquina u ordenador](screenshots/01.PNG)
+![Informacion de la maquina u ordenador](screenshots/etapa01/00.JPG)
 
-- El entorno con el que se cuenta para el despliegue del proyecto final, se trata de un pequeño ordenador "Raspberry Pi 4" con 2gb de RAM.
+- El entorno con el que se cuenta para el despliegue del proyecto final, es una maquina virtual.
 - Con el sistema operativo sugerido: Ubuntu Server 24.04.
-- El equipo se encuentra conectado a mi red local a traves de su tarjeta wifi con la siguiente direccion IP: 192.168.1.13
+- El equipo se encuentra conectado en la redi virtual con la siguiente direccion IP: 192.168.1.13
 
-![Informacion de la maquina u ordenador](screenshots/02.PNG)
+![Informacion de la maquina u ordenador](screenshots/etapa01/01.JPG)
 
 2. Instalación `microk8s` orden de pasos seguidos:
 - Ejecución de los comando de instalación: `sudo snap install microk8s --classic`
-    ![Informacion de la maquina u ordenador](screenshots/03.PNG)
+    
+    Proceso de instalación
 
-    Proceso de instalacion
-
-    ![Informacion de la maquina u ordenador](screenshots/04.PNG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/02.JPG)
 
     Instalación completada
 
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/03.JPG)
+
+
 - Configuracion de grupos
 
-    ![Informacion de la maquina u ordenador](screenshots/05.PNG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/04.JPG)
+
 - Configuracion de alias para el comando `microk8s`
-    ![Informacion de la maquina u ordenador](screenshots/07.PNG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/05.JPG)
 
 - Habilitacion de Addons los comandos ejecutados son los siguientes:
     * `microk8s enable dns` Habilitación del DNS de microk8s
     * `microk8s enable storage` Habilitacion del Storage.
     * `microk8s enable ingress` Habilitacion de Ingress
-    ![Informacion de la maquina u ordenador](screenshots/08.PNG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/06.JPG)
 
     * `microk8s enable metrics-server` Habilitacion de Metraicas
-    ![Informacion de la maquina u ordenador](screenshots/09.PNG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/07.JPG)
 
 
     * `microk8s enable metallb:192.168.1.200-192.168.1.210` Habilitacion de direccion IP fuera del rango de la asignacion del DHCP de mi red local.
-    ![Informacion de la maquina u ordenador](screenshots/11.PNG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/08.JPG)
 
-        Para tener mas información acerca de la configuracion del rango de IP que se desea asignar se ejecuto previamente el siguiente comando: `ip a show wlan0` este comando nos permite obtener informacion de la direccion IP que tenemos asignado.
-        ![Informacion de la maquina u ordenador](screenshots/10.PNG)
-
-
+        Por ultimo verificamos el estado del microk8s con el comando: `microk8s status`
+        ![Informacion de la maquina u ordenador](screenshots/etapa01/09.JPG)
 
 
+        Validamos los paquetes requeridos para los siguientes pasos ejecutando los siguienes comandos:
+        - Validamos la instalacion de GIT: `git --version`
+        - Validamos la instalacion de Docker: `docker --version`
+        - Validamos la instalacion de docker compose: `docker composer version`
 
+        ![Informacion de la maquina u ordenador](screenshots/etapa01/10.JPG)
 
+        Iniciamos sesion en DockerHub con el siguiente comando: `docker login`
 
+        ![Informacion de la maquina u ordenador](screenshots/etapa01/11.JPG)
 
+- Obtencion y Despliegue "PROYECTO INTEGRADOR V2.0"
+        - Extraemos los archivos con el siguiente comando: `unzip proyecto-integrador-docker-k8s-main`
 
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/12.JPG)
 
+- Despliegue y verificacion Proyecto Integrador v2.0
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-
-
-1. Apache HTTP Server (httpd)
-2. Comandos ejecutados
-
-    ` # docker run -d -p 8081:80 --name mi-apache httpd` (Comando de despliegue - Creación)
-
-    ` # docker logs mi-apache` (Comando de verificacion)
-
-    `# docker rm my-apache` (Comando de limpieza)
-
-3. Explicación breve - Qué hace cada flag del comando `docker run` que usaste:
-    - `-d` Ejecuta un contenedor en segundo plano.
-    - `-p` Mapea los puertos del host al contenedor. 
-    - `--name` Asigna un nombre personalizado a nuestro contenedor.
-    - `--rm` Elimina el contenedor automaticamente al detenerse.
-
-4. Evidencia
-    - Screenshots 01 (Estado)
-    ![Containers corriendo](screenshots/Opcion1/Descarga&Despliegue%20imagen%20httpd%20(apache)%20-%2001.JPG)
-
-    - Screenshots 02 (Verificación)
-    ![Container corriendo y exponiendo resultado en navegarores](screenshots/Opcion1/Verificacion%2001.JPG)
-
-    - Screenshots 03 (Eliminacion)
-    ![Screenshot o salida mostrando que el container fue eliminado correctamente](screenshots/Opcion1/Eliminacion%20contenedor.JPG)
+    Siguiendo los pasos del `Proyecto-Integrador/k8s/DEPLOYMENT_GUIDE_MICROK8S`
     
-5. Conclusiones
-    - *Qué se aprendio*, para esta primera clase se logro aprender acerca de los comandos basico para crear (correr), verificar y eliminar contenedores. Ademas de logramos usar diferentes tags que nos permiten personalizar el "funcionamiento" de nuestros contenedores.
+    - Habilitacion de requisitos 
 
-    - *Dificultades*, la dificultad que puedo mesionar es el uso de comandos, al ser una persona que viene del entorno windows.  -->
+    <!-- ![Informacion de la maquina u ordenador](screenshots/etapa01/13.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/14.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/15.JPG) -->
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/16.JPG)
+
+    - Preparacion de Imagenes
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/17.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/18.JPG)
+
+    - Uso del registry local de microk8s e importacion de imagenes desde docker 
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/19.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/20.JPG)
+
+    Paso: 0 - Creacion del NameSpace
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/21.JPG)
+
+    Paso: 1 - Configuracion (ConfigMaps y Secrets)
+
+    Paso: 2 - Base de Datos (PostgreSQL con StatefulSet)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/22.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/23.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/24.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/25.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/26.JPG)
+
+    Paso: 3 - Cache (Redis)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/27.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/28.JPG)
+
+    Paso: 4 - Backend (Sprint Boot API)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/29.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/30.JPG)
+
+    Paso: 5 Frontend (Angular)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/31.JPG)
+
+    Paso: 6 - Ingres (Routing HTTP)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/32.JPG)
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/32.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/33.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/34.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/35.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/36.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/37.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/38.JPG)
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/39.JPG)
+
+    Ya para la seccion de "Actualizar la aplicacion Desdepues de la modificacion de codigo", se presenta el siguiente problema:
+    
+
+    ![Informacion de la maquina u ordenador](screenshots/etapa01/40.JPG)
+
+
+
+
+
+
+
