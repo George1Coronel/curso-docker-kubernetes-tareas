@@ -135,7 +135,7 @@
     ![Informacion de la maquina u ordenador](screenshots/etapa01/39.JPG)
 
     Ya para la seccion de "Actualizar la aplicacion Desdepues de la modificacion de codigo", se presenta el siguiente problema:
-    
+    No se logra encontrar la imagen: alefiengo/springboot-api:v2.0 en doker-hub
 
     ![Informacion de la maquina u ordenador](screenshots/etapa01/40.JPG)
 
